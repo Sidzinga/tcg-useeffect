@@ -1,6 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
 import { useState, useEffect } from "react";
+import styled from 'styled-components'
+import Digitize from './components/  numbers';
+
+
+
+
 
 function App() {
  
@@ -12,15 +18,19 @@ function App() {
       }, 1000);
     });
 // let d = new Date()
-const [time,setTime] = useState(0)
+const [time,setTime] = useState(Date())
     useEffect(() => {
       setTimeout(() => {
         setTime((time) => time = Date());
-      }, 1000);
+      }, []);
     })
   
     return (<div><h1>I've rendered {count} times!</h1>
-    <h1>The time is {time}</h1></div>);
+    <h1>The time is {time}</h1>
+    <Digitize/>
+    </div>);
+
+    
   
 }
 
